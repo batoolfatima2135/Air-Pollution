@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Book Store</b></h3>
+  <h3><b>Air Pollution</b></h3>
 
 </div>
 
@@ -31,10 +31,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 BOOK STORE <a name="about-project"></a>
+# 📖 AIR POLLUTION <a name="about-project"></a>
 
 
-**BOOK STORE** is a website that allows you to: Display a list of books Add a book Remove a selected book
+**AIR POLLUTION** shows data about how clean or polluted the air is in different cities. It gets information from several sources and lets you see and sort the data in different ways.The website aims to help people understand air quality and make informed choices to support cleaner air efforts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -52,9 +52,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Display a list of books**
-- **Add a book**
-- **Remove a selected book**
+- **Display AQI (AIR QUALITY INDEX) of different cities**
+- **Show detailed graph of air components**
+- **Show filtered information**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,7 +86,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 <code>
-  git clone https://github.com/batoolfatima2135/book-store.git
+  git clone https://github.com/batoolfatima2135/air-pollution-data.git
   cd book-store
 </code>
 
@@ -104,7 +104,7 @@ Coming soon
 
 ### Deployment <a name="deployment"></a>
 
-You can deploy this project using: GitHub Pages
+You can deploy this project using: GitHub Pages or render
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -127,9 +127,9 @@ You can deploy this project using: GitHub Pages
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **Styling**
+- [ ] **More details**
 - [ ] **About page**
-- [ ] **Login**
+- [ ] **Login page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,7 +157,7 @@ If you like this project kindly leave a star!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to acknowledge and give credit to the Microverse for providing the documentation and project spec that made this project doable.
+I would like to acknowledge and give credit to [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on behance for the Original design and Microverse for providing the documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
