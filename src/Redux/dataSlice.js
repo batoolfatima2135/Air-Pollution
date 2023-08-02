@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 const cities = ['Chicago', 'Seattle', 'San Francisco', 'New York', 'London', 'Manchester', 'Birmingham', 'Edinburgh', 'Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Shanghai', 'Beijing', 'Hong Kong', 'Shenzhen'];
@@ -8,13 +7,13 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-const apiCall = async (city) => {
-  const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=4491fa46b9e543b1ddae58581596f81b`);
-  return response.data;
+export const apiCall = async (city) => {
+  const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=4491fa46b9e543b1ddae58581596f81b`);
+  return response.json();
 };
-const additionalApiCall = async (lat, lon) => {
-  const response = await axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=4491fa46b9e543b1ddae58581596f81b`);
-  return response.data;
+export const additionalApiCall = async (lat, lon) => {
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=4491fa46b9e543b1ddae58581596f81b`);
+  return response.json();
 };
 
 export const fetchData = createAsyncThunk('data/fetchData', async (_, thunkApi) => {
