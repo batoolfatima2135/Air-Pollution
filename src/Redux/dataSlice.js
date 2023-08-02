@@ -9,11 +9,11 @@ const initialState = {
   error: null,
 };
 const apiCall = async (city) => {
-  const response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=4491fa46b9e543b1ddae58581596f81b`);
+  const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=4491fa46b9e543b1ddae58581596f81b`);
   return response.data;
 };
 const additionalApiCall = async (lat, lon) => {
-  const response = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=4491fa46b9e543b1ddae58581596f81b`);
+  const response = await axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=4491fa46b9e543b1ddae58581596f81b`);
   return response.data;
 };
 
