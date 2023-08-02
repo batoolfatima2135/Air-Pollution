@@ -8,6 +8,7 @@ import store from '../Redux/Store';
 import Navbar from '../Components/Navbar';
 import Innerpage from '../Routes/Innerpage';
 import Homepage from '../Routes/Homepage';
+import PollutantGraph from '../Components/Pollutantgraph';
 
 const mockStore = configureStore([]);
 
@@ -67,5 +68,19 @@ describe('Component testing', () => {
       </Provider>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+});
+describe('PollutantGraph', () => {
+  const mockComponents = {
+    co: 10,
+    no2: 20,
+    o3: 30,
+    pm10: 40,
+  };
+
+  it('should render the PollutantGraph component correctly', () => {
+    render(<PollutantGraph components={mockComponents} />);
+
+    // Your assertions
   });
 });

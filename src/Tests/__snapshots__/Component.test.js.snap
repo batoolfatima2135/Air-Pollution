@@ -226,7 +226,7 @@ exports[`Component testing Innerpage should render correctly 1`] = `
     at C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\@testing-library\\react\\dist\\act-compat.js:46:25
     at renderRoot (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\@testing-library\\react\\dist\\pure.js:161:26)
     at render (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\@testing-library\\react\\dist\\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\src\\Tests\\Component.test.js:64:34)
+    at Object.&lt;anonymous&gt; (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\src\\Tests\\Component.test.js:65:34)
     at Promise.then.completed (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\utils.js:391:28)
     at new Promise (&lt;anonymous&gt;)
     at callAsyncCircusFn (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\utils.js:316:10)

@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/custom.scss';
 import { fetchData } from './Redux/dataSlice';

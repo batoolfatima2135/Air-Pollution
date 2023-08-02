@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -12,7 +11,7 @@ const PollutantGraph = ({ components }) => {
   }));
 
   return (
-    <div className="row justify-content-center">
+    <div data-testid="pollutant-graph" className="row justify-content-center">
       <div className="col-10 bg-light rounded my-2 py-4">
         <AreaChart width={300} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="#000000" />
