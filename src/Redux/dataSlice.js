@@ -42,15 +42,35 @@ const dataSlice = createSlice({
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.isLoading = false;
-        const data = action.payload.flat().map((result) => ({
-          id: uuidv4(),
-          name: result.name,
-          country: result.country,
-          state: result.state,
-          components: result.airPollutionData.list[0].components,
-          aqi: result.airPollutionData.list[0].main.aqi,
+        const data = action.payload.flat().map((result) => {
+          let country;
+          switch (result.country) {
+            case 'US':
+              country = 'USA';
+              break;
+            case 'GB':
+              country = 'UK';
+              break;
+            case 'CA':
+              country = 'CANADA';
+              break;
+            case 'CN':
+              country = 'CHINA';
+              break;
+            default:
+              country = result.country;
+          }
 
-        }));
+          return {
+            id: uuidv4(),
+            name: result.name,
+            country,
+            state: result.state,
+            components: result.airPollutionData.list[0].components,
+            aqi: result.airPollutionData.list[0].main.aqi,
+
+          };
+        });
         state.data = data;
       })
       .addCase(fetchData.rejected, (state, action) => {
