@@ -1,0 +1,15 @@
+:root {
+  --default-font: 'gill sans', sans-serif;
+}
+
+$primary: #f13980;
+$dark: rgb(252, 45, 124);
+$theme-colors: (
+  "primary": $primary,
+  "dark": $dark,
+);
+
+
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
