@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component testing Homepage should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <header>
+      <div
+        class="row m-0 p-0 "
+      >
+        <div
+          class="col-12 p-3 text-center"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12"
+            >
+              <div
+                class="input-group-sm d-flex"
+              >
+                <input
+                  class="form-control rounded-0"
+                  placeholder="Search by city"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="col-3"
+                >
+                  <select
+                    aria-label="Select"
+                    class="form-select rounded-0 form-select-sm "
+                  >
+                    <option
+                      value="ALL"
+                    >
+                      Country
+                    </option>
+                    <option
+                      value="Country 1"
+                    >
+                      Country 1
+                    </option>
+                    <option
+                      value="Country 2"
+                    >
+                      Country 2
+                    </option>
+                  </select>
+                </div>
+                <div
+                  class="col-3"
+                >
+                  <select
+                    aria-label="Select"
+                    class="form-select form-select-sm  rounded-0"
+                  >
+                    <option
+                      value="ALL"
+                    >
+                      AQI
+                    </option>
+                    <option
+                      value="3"
+                    >
+                      3
+                    </option>
+                    <option
+                      value="4"
+                    >
+                      4
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h5
+            class="text-light mt-4"
+          >
+            <b>
+              CITIES
+            </b>
+          </h5>
+        </div>
+      </div>
+    </header>
+    <div
+      class="row bg-dark p-2 w-100"
+    >
+      <p
+        class="text-light mx-2 m-0"
+      >
+        <b>
+          AQI INDEX
+        </b>
+      </p>
+    </div>
+    <div
+      class="row m-0"
+    >
+      <div
+        class="col-6  bg-primary px-3"
+      >
+        <a
+          class="text-light text-decoration-none"
+          href="/details/1"
+        >
+          <img
+            alt="arrow"
+            class="float-end my-1"
+            height="20px"
+            src="arrow.png"
+          />
+          <img
+            alt="map"
+            class="img-fluid"
+            src="map.png"
+          />
+          <div
+            class="row justify-content-end align-items-end"
+          >
+            <div
+              class="col-12 text-end"
+            >
+              <p
+                class="text-uppercase m-0"
+              >
+                <b>
+                  City 1
+                </b>
+              </p>
+              <p
+                class="m-0"
+              >
+                State 1, Country 1
+              </p>
+              <p>
+                <b>
+                  AQI : 3
+                </b>
+                 😐
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        class="col-6  bg-dark px-3"
+      >
+        <a
+          class="text-light text-decoration-none"
+          href="/details/2"
+        >
+          <img
+            alt="arrow"
+            class="float-end my-1"
+            height="20px"
+            src="arrow.png"
+          />
+          <img
+            alt="map"
+            class="img-fluid"
+            src="map.png"
+          />
+          <div
+            class="row justify-content-end align-items-end"
+          >
+            <div
+              class="col-12 text-end"
+            >
+              <p
+                class="text-uppercase m-0"
+              >
+                <b>
+                  City 2
+                </b>
+              </p>
+              <p
+                class="m-0"
+              >
+                State 2, Country 2
+              </p>
+              <p>
+                <b>
+                  AQI : 4
+                </b>
+                 😕
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Component testing Innerpage should render correctly 1`] = `
+<DocumentFragment>
+  <h2>
+    Unexpected Application Error!
+  </h2>
+  <h3
+    style="font-style: italic;"
+  >
+    Cannot read properties of undefined (reading 'name')
+  </h3>
+  <pre
+    style="padding: 0.5rem; background-color: rgba(200, 200, 200, 0.5);"
+  >
+    TypeError: Cannot read properties of undefined (reading 'name')
+    at Innerpage (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\src\\Routes\\Innerpage.jsx:32:19)
+    at renderWithHooks (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:20074:13)
+    at beginWork (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:21587:16)
+    at beginWork$1 (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:27426:14)
+    at performUnitOfWork (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:26560:12)
+    at workLoopSync (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:26466:5)
+    at renderRootSync (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:26434:7)
+    at recoverFromConcurrentError (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:25850:20)
+    at performConcurrentWorkOnRoot (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react-dom\\cjs\\react-dom.development.js:25750:22)
+    at flushActQueue (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react\\cjs\\react.development.js:2667:24)
+    at act (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\react\\cjs\\react.development.js:2582:11)
+    at C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\@testing-library\\react\\dist\\act-compat.js:46:25
+    at renderRoot (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\@testing-library\\react\\dist\\pure.js:161:26)
+    at render (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\@testing-library\\react\\dist\\pure.js:247:10)
+    at Object.&lt;anonymous&gt; (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\src\\Tests\\Component.test.js:64:34)
+    at Promise.then.completed (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\utils.js:316:10)
+    at _callCircusTest (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at _runTest (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\run.js:60:9)
+    at run (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:82:19)
+    at runTestInternal (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-runner\\build\\runTest.js:389:16)
+    at runTest (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-runner\\build\\runTest.js:475:34)
+    at Object.worker (C:\\Users\\LENOVO\\Desktop\\air-pollution-data\\node_modules\\jest-runner\\build\\testWorker.js:133:12)
+  </pre>
+  <p>
+    💿 Hey developer 👋
+  </p>
+  <p>
+    You can provide a way better UX than this when your app throws errors by providing your own 
+    <code
+      style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);"
+    >
+      ErrorBoundary
+    </code>
+     or 
+    <code
+      style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);"
+    >
+      errorElement
+    </code>
+     prop on your route.
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Component testing Navbar component should render correctly 1`] = `
+<DocumentFragment>
+  <nav
+    class="navbar navbar-expand-lg navbar-expand-sm mx-2 bg-dark"
+  >
+    <h3
+      class="text-light m-0"
+    >
+      Air pollution Data
+    </h3>
+    <ul
+      class="navbar-nav ms-auto d-flex flex-row"
+    >
+      <li
+        class="nav-item"
+      >
+        <a
+          aria-current="page"
+          class="nav-link active"
+          href="/"
+        >
+          <img
+            alt="mic"
+            height="30px"
+            src="mic.png"
+          />
+        </a>
+      </li>
+      <li
+        class="nav-item"
+      >
+        <a
+          aria-current="page"
+          class="nav-link active"
+          href="/"
+        >
+          <img
+            alt="setting"
+            src="settings.png"
+          />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
