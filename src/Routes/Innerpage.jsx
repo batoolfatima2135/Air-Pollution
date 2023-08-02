@@ -42,7 +42,7 @@ const Innerpage = () => {
         </div>
 
       </div>
-      <div className="row my-3">
+      <div className="row my-3 row justify-content-center">
         <h3 className="text-light text-center bg-dark  p-2">GRAPH</h3>
         <PollutantGraph components={item.components} />
       </div>
