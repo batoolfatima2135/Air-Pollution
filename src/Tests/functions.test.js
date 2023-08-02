@@ -1,8 +1,5 @@
 import { apiCall, additionalApiCall } from '../Redux/dataSlice';
 
-// Import the functions to be tested
-
-// Mock the fetch function for apiCall
 jest.mock('../Redux/dataSlice', () => ({
   apiCall: jest.fn(),
   additionalApiCall: jest.fn(),

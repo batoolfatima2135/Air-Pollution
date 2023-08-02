@@ -74,7 +74,7 @@ const dataSlice = createSlice({
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.error = action.payload ? action.payload.errorMessage : 'Something went wrong';
       });
   },
 });
