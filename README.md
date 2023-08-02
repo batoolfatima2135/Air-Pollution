@@ -62,7 +62,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://air-pollution-data.vercel.app/)
+[Live Demo](https://air-pollution-data.vercel.app/) | 
 [Video presentation](https://youtu.be/Fvw-E-pgo4c)
 
 <!-- - [Live Demo Link](https://google.com) -->
