@@ -1,301 +1,170 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-// import { fetchData } from '../Redux/dataSlice';
+import { useState, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-// import PollutantGraph from '../Components/Pollutantgraph';
+import arrow from '../Assets/arrow.png';
+import map from '../Assets/map.png';
 
 const Homepage = () => {
-  const data = [
-    {
-      id: 0,
-      name: 'Chicago',
-      country: 'US',
-      state: 'Illinois',
-      components: {
-        co: 297.07,
-        no: 0.46,
-        no2: 3.21,
-        o3: 120.16,
-        so2: 2.27,
-        pm2_5: 7.38,
-        pm10: 7.75,
-        nh3: 0.97,
-      },
-      aqi: 3,
-    },
-    {
-      id: 1,
-      name: 'Seattle',
-      country: 'US',
-      state: 'Washington',
-      components: {
-        co: 195.27,
-        no: 0.61,
-        no2: 2.7,
-        o3: 86.55,
-        so2: 2.09,
-        pm2_5: 4.49,
-        pm10: 5.64,
-        nh3: 0.22,
-      },
-      aqi: 2,
-    },
-    {
-      id: 2,
-      name: 'San Francisco',
-      country: 'US',
-      state: 'California',
-      components: {
-        co: 183.58,
-        no: 0.15,
-        no2: 0.66,
-        o3: 72.24,
-        so2: 1,
-        pm2_5: 2.93,
-        pm10: 4.61,
-        nh3: 0,
-      },
-      aqi: 2,
-    },
-    {
-      id: 3,
-      name: 'New York County',
-      country: 'US',
-      state: 'New York',
-      components: {
-        co: 327.11,
-        no: 0.47,
-        no2: 7.88,
-        o3: 251.77,
-        so2: 9.78,
-        pm2_5: 27.18,
-        pm10: 28.64,
-        nh3: 1.06,
-      },
-      aqi: 5,
-    },
-    {
-      id: 4,
-      name: 'London',
-      country: 'GB',
-      state: 'England',
-      components: {
-        co: 287.06,
-        no: 0.31,
-        no2: 6.86,
-        o3: 67.23,
-        so2: 4.05,
-        pm2_5: 2.99,
-        pm10: 5.54,
-        nh3: 0.34,
-      },
-      aqi: 2,
-    },
-    {
-      id: 5,
-      name: 'Manchester',
-      country: 'GB',
-      state: 'England',
-      components: {
-        co: 195.27,
-        no: 2.01,
-        no2: 15.25,
-        o3: 16.63,
-        so2: 2.06,
-        pm2_5: 3.64,
-        pm10: 4.23,
-        nh3: 1.36,
-      },
-      aqi: 1,
-    },
-    {
-      id: 6,
-      name: 'Birmingham',
-      country: 'GB',
-      state: 'England',
-      components: {
-        co: 247,
-        no: 0.27,
-        no2: 4.54,
-        o3: 44.35,
-        so2: 1.91,
-        pm2_5: 2.7,
-        pm10: 3.2,
-        nh3: 1.22,
-      },
-      aqi: 1,
-    },
-    {
-      id: 7,
-      name: 'City of Edinburgh',
-      country: 'GB',
-      state: 'Scotland',
-      components: {
-        co: 191.93,
-        no: 0.01,
-        no2: 1.25,
-        o3: 57.94,
-        so2: 0.78,
-        pm2_5: 2.02,
-        pm10: 5.24,
-        nh3: 0.15,
-      },
-      aqi: 1,
-    },
-    {
-      id: 8,
-      name: 'Old Toronto',
-      country: 'CA',
-      state: 'Ontario',
-      components: {
-        co: 293.73,
-        no: 1.09,
-        no2: 11.48,
-        o3: 145.91,
-        so2: 15.26,
-        pm2_5: 15.18,
-        pm10: 16.85,
-        nh3: 1.66,
-      },
-      aqi: 4,
-    },
-    {
-      id: 9,
-      name: 'Vancouver',
-      country: 'CA',
-      state: 'British Columbia',
-      components: {
-        co: 216.96,
-        no: 1.45,
-        no2: 5.23,
-        o3: 85.12,
-        so2: 5.84,
-        pm2_5: 3.89,
-        pm10: 4.81,
-        nh3: 0.86,
-      },
-      aqi: 2,
-    },
-    {
-      id: 10,
-      name: 'Montreal',
-      country: 'CA',
-      state: 'Quebec',
-      components: {
-        co: 213.62,
-        no: 0.91,
-        no2: 3.98,
-        o3: 95.84,
-        so2: 4.41,
-        pm2_5: 2.01,
-        pm10: 2.37,
-        nh3: 0.85,
-      },
-      aqi: 2,
-    },
-    {
-      id: 11,
-      name: 'Calgary',
-      country: 'CA',
-      state: 'Alberta',
-      components: {
-        co: 223.64,
-        no: 0.3,
-        no2: 1.39,
-        o3: 81.54,
-        so2: 1.24,
-        pm2_5: 5.07,
-        pm10: 5.36,
-        nh3: 2.19,
-      },
-      aqi: 2,
-    },
-    {
-      id: 12,
-      name: 'Shanghai',
-      country: 'CN',
-      components: {
-        co: 6782.53,
-        no: 346.9,
-        no2: 119.27,
-        o3: 0,
-        so2: 709.53,
-        pm2_5: 259.66,
-        pm10: 301.61,
-        nh3: 0,
-      },
-      aqi: 5,
-    },
-    {
-      id: 13,
-      name: 'Beijing',
-      country: 'CN',
-      state: 'Beijing',
-      components: {
-        co: 781.06,
-        no: 73.31,
-        no2: 42.5,
-        o3: 0,
-        so2: 31.47,
-        pm2_5: 96.73,
-        pm10: 116.47,
-        nh3: 10.13,
-      },
-      aqi: 5,
-    },
-    {
-      id: 14,
-      name: 'Hong Kong Island',
-      country: 'CN',
-      state: 'Hong Kong',
-      components: {
-        co: 297.07,
-        no: 4.08,
-        no2: 25.36,
-        o3: 1.13,
-        so2: 45.3,
-        pm2_5: 21.12,
-        pm10: 24.82,
-        nh3: 0,
-      },
-      aqi: 2,
-    },
-    {
-      id: 15,
-      name: 'Shenzhen',
-      country: 'CN',
-      state: 'Guangdong Province',
-      components: {
-        co: 781.06,
-        no: 67.06,
-        no2: 47.98,
-        o3: 0,
-        so2: 106.81,
-        pm2_5: 78.93,
-        pm10: 89.12,
-        nh3: 0,
-      },
-      aqi: 5,
-    },
-  ];
-  const dispatch = useDispatch();
-  useEffect(() => {
-    // dispatch(fetchData());
-  }, [dispatch]);
-  return (
-    <div className="row">
-      {data.map((item) => (
-        <div className="col-6 border bg-success text-light" key={item.id}>
-          <NavLink to={`/details/${item.id}`} className="text-light">
-            <p>{item.id}</p>
-            <p>{item.name}</p>
-            <p>{item.aqi}</p>
-            <p>{item.country}</p>
-          </NavLink>
-        </div>
+  const [searchInput, setSearchInput] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('ALL');
+  const [selectedAQI, setSelectedAQI] = useState('ALL');
+  const [heading, setHeading] = useState('CITIES');
+  const { data, isLoading } = useSelector((state) => state.airPollutionData);
+  const uniqueCountries = [];
+  const uniqueAQI = [];
+  const filteredData = useMemo(() => {
+    let result = data;
 
-      ))}
+    if (searchInput !== '') {
+      result = result.filter((item) => item.name.toLowerCase().includes(searchInput.toLowerCase()));
+    } else {
+      if (selectedCountry !== 'ALL') {
+        result = result.filter((item) => item.country === selectedCountry);
+      }
+
+      if (selectedAQI !== 'ALL') {
+        result = result.filter((item) => item.aqi.toString() === selectedAQI);
+      }
+    }
+
+    return result;
+  }, [data, searchInput, selectedCountry, selectedAQI]);
+
+  const filteredCountries = data.filter((item) => {
+    if (!uniqueCountries.includes(item.country)) {
+      uniqueCountries.push(item.country);
+      return true;
+    }
+    return false;
+  });
+  const filteredAQI = data.filter((item) => {
+    if (!uniqueAQI.includes(item.aqi)) {
+      uniqueAQI.push(item.aqi);
+      return true;
+    }
+    return false;
+  });
+  const handleChange = (event) => {
+    const { value } = event.target;
+    setSearchInput(value);
+    if (!value === '') {
+      setHeading(`Search results for "${value}"`);
+    }
+  };
+
+  const handleCountryChange = (event) => {
+    const { value } = event.target;
+    setSelectedCountry(value);
+    if (selectedAQI !== 'ALL' && value !== 'ALL') {
+      setHeading(`CITIES IN ${value} WITH AQI ${selectedAQI}`);
+    } else {
+      setHeading(`CITIES IN ${value}`);
+    }
+  };
+
+  const handleAQIChange = (event) => {
+    const { value } = event.target;
+    setSelectedAQI(value);
+    if (selectedCountry !== 'ALL' && value !== 'ALL') {
+      setHeading(`CITIES IN ${selectedCountry} WITH AQI ${value}`);
+    } else {
+      setHeading(`CITIES WITH AQI ${value}`);
+    }
+  };
+
+  const getEmojiFace = (value) => {
+    switch (value) {
+      case 2:
+        return '😊'; // Smiling face for value 1
+      case 1:
+        return '😄'; // Grinning face for value 2
+      case 3:
+        return '😐'; // Neutral face for value 3
+      case 4:
+        return '😕'; // Confused face for value 4
+      case 5:
+        return '😢'; // Crying face for value 5
+      default:
+        return '❓'; // A question mark emoji for unknown values
+    }
+  };
+  return (
+    <div>
+      <header>
+        <div className="row m-0 p-0 ">
+          <div className="col-12 p-3 text-center">
+            <div className="row justify-content-center">
+              <div className="col-12">
+                <div className="input-group-sm d-flex">
+                  <input
+                    type="text"
+                    className="form-control rounded-0"
+                    placeholder="Search by city"
+                    onChange={handleChange}
+                    value={searchInput}
+                  />
+                  <div className="col-3">
+                    <select
+                      className="form-select rounded-0 form-select-sm "
+                      aria-label="Select"
+                      value={selectedCountry}
+                      onChange={handleCountryChange}
+                    >
+                      <option value="ALL">Country</option>
+                      {filteredCountries.map((item) => (
+                        <option value={item.country} key={item.id}>{item.country}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="col-3">
+                    <select
+                      className="form-select form-select-sm  rounded-0"
+                      aria-label="Select"
+                      value={selectedAQI}
+                      onChange={handleAQIChange}
+                    >
+                      <option value="ALL">AQI</option>
+                      {filteredAQI.sort((a, b) => a.aqi - b.aqi).map((item) => (
+                        <option value={item.aqi} key={item.id}>{item.aqi}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h5 className="text-light mt-4"><b>{heading}</b></h5>
+          </div>
+        </div>
+      </header>
+      <div className="row bg-dark p-2 w-100">
+        <p className="text-light mx-2 m-0"><b>AQI INDEX</b></p>
+      </div>
+      <div className="row m-0">
+        {!isLoading && filteredData.length > 0 ? filteredData.map((item, index) => (
+          <div className={`col-6  ${(index + 1) % 4 === 2 || (index + 1) % 4 === 3 ? 'bg-dark' : 'bg-primary'} px-3`} key={item.id}>
+            <NavLink to={`/details/${item.id}`} className="text-light text-decoration-none">
+              <img src={arrow} alt="arrow" height="20px" className="float-end my-1" />
+              <img src={map} alt="map" className="img-fluid" />
+              <div className="row justify-content-end align-items-end">
+                <div className="col-12 text-end">
+                  <p className="text-uppercase m-0"><b>{item.name}</b></p>
+                  <p className="m-0">{`${item.state}, ${item.country}`}</p>
+                  <p>
+                    <b>{`AQI : ${item.aqi}`}</b>
+                    {` ${getEmojiFace(item.aqi)}`}
+                  </p>
+                </div>
+              </div>
+            </NavLink>
+          </div>
+
+        )) : <div className="p-4 pb-0 text-center text-light"><h5 className="m-0 p-0">Nothing found</h5></div>}
+        {isLoading && (
+          <div className="p-4 text-center text-light"><h5>Loading...</h5></div>
+        )}
+      </div>
     </div>
+
   );
 };
 export default Homepage;
